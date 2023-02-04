@@ -3,19 +3,34 @@
 // but is it easier or clearer than writing them out?
 // I think in this case, no. Always choose the simplest, easiest, clearest option
 :root {
-  --theme-color-blue-medium: #759EDA;
-  --theme-color-blue-dark: #5879C7;
-  --theme-color-blue-light: #9CCEF4;
-  --theme-color-orange: #F4A71D;
-  --theme-color-white: #FFFFFF;
---theme-color-blue-navy: #141A5B;
+  --theme-color---block: #759eda;
+  --theme-color--button: #5879c7;
+  --theme-color--paper: #9ccef4;
+  --theme-color--highlight: #ffffff;
+  --theme-color--link: #141a5b;
+  --weather--storm: #888;
+  --weather--drizzle: #efefef;
+  --weather--rain: #555;
+  --weather--snow: #bbb;
+  --weather--fog: #333;
+  --weather--clear: #3257ea;
+  --weather--partlycloudy: #4259b8;
+  --weather--mostlycloudy: #888;
 
-  // @media (prefers-color-scheme: dark) {
-  //   --theme-color-blue-medium: #759EDA;
-  //   --theme-color-blue-dark: #5879C7;
-  //   --theme-color-blue-light: #9CCEF4;
-  //   --theme-color-orange: #F4A71D;
-  //   --theme-color-white: #FFFFFF;
-  // --theme-color-blue-navy: #141A5B;
-  // }
+//   @media (prefers-color-scheme: dark) {
+//     --theme-color---block: #759eda;
+//     --theme-color--button: #5879c7;
+//     --theme-color--paper: #9ccef4;
+//     --theme-color--highlight: #ffffff;
+//     --theme-color--link: #141a5b;
+//     --weather--storm: #888;
+//     --weather--drizzle: #efefef;
+//     --weather--rain: #555;
+//     --weather--snow: #bbb;
+//     --weather--fog: #333;
+//     --weather--clear: #3257ea;
+//     --weather--partlycloudy: #4259b8;
+//     --weather--mostlycloudy: #888;
+//   }
+// 
 }
