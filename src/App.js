@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <Header title={siteTitle} />
+      <button> FIND WEATHER</button>
 
       <main className="c-site-main" tabIndex="0">
       </main>
