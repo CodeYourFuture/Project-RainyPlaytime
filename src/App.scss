@@ -1,2 +1,14 @@
 @use "theme/utilities.scss";
 @use "theme/global.scss";
+
+
+.c-site-main{
+    background-color: skyblue;
+}
+
+.weather-img{
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
