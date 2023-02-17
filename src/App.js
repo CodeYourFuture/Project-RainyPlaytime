@@ -21,7 +21,6 @@ function App() {
           />
         </div>
 
-        
 
         {/* {FakeWeatherData.list.map((data) => (
           <div key={data.dt}>Temp : {data && data.main.temp}</div>

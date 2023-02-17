@@ -2,8 +2,12 @@ import "./Header.scss";
 import React, { useState, useEffect } from "react";
 
 const Header = ({ title }) => {
-  const [data, setData] = useState([]);
-  // const [city, setCity] = useState("");
+  const [temp, setTemp] = useState([]);
+  const [city, setCity] = useState("");
+
+  function changeCity(){
+     setTemp(temp);
+  }
 
   useEffect(() => {
     fetch(
@@ -12,7 +16,7 @@ const Header = ({ title }) => {
       .then((res) => res.json())
       .then((data) => {
         // console.log(data.main.temp.toFixed());
-        setData(data);
+        setTemp(data);
       })
       .catch((e) => console.log(e.message));
   }, []);
@@ -24,14 +28,13 @@ const Header = ({ title }) => {
       <input
         className="city"
         type="text"
-        // value={city}
-        // onChange={(event) => setCity(event.target.value)}
+        value={city}
+        onChange={(event) => setCity(event.target.value)}
       />
 
-      <button>Search</button>
-
+      <button onClick={changeCity}>Search</button>
       <div>
-        <h1>Temp:{data.main.temp.toFixed()}°C</h1>
+        <h2>Temp:{temp.main.temp.toFixed()}°C</h2>
       </div>
 
       {/* {data.main.temp ? <h1>Temp:{data.main.temp}°C </h1> : null} */}
