@@ -2,11 +2,11 @@ import "./Header.scss";
 import React, { useState, useEffect } from "react";
 
 const Header = ({ title }) => {
-  const [temp, setTemp] = useState([]);
+  const [data, setData] = useState([]);
   const [city, setCity] = useState("");
 
   function changeCity(){
-     setTemp(temp);
+     setData(data);
   }
 
   useEffect(() => {
@@ -15,8 +15,7 @@ const Header = ({ title }) => {
     )
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data.main.temp.toFixed());
-        setTemp(data);
+        setData(data);
       })
       .catch((e) => console.log(e.message));
   }, []);
@@ -33,8 +32,9 @@ const Header = ({ title }) => {
       />
 
       <button onClick={changeCity}>Search</button>
+
       <div>
-        <h2>Temp:{temp.main.temp.toFixed()}°C</h2>
+        <h2>Temp:{data?.main?.temp?.toFixed()}°C</h2>
       </div>
 
       {/* {data.main.temp ? <h1>Temp:{data.main.temp}°C </h1> : null} */}
