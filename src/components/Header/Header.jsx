@@ -1,24 +1,20 @@
 import "./Header.scss";
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 
 const Header = ({ title }) => {
-  const [data, setData] = useState([]);
+  const [weatherData, setWeatherData] = useState([]);
   const [city, setCity] = useState("");
+  
 
-  function changeCity(){
-     setData(data);
-  }
-
-  useEffect(() => {
+  function getNewWeather (){
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=liverpool&units=metric&appid=3b86046cce0de3be7cfa8369f4540b37`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=3b86046cce0de3be7cfa8369f4540b37`
     )
       .then((res) => res.json())
       .then((data) => {
-        setData(data);
+        setWeatherData(data);
       })
-      .catch((e) => console.log(e.message));
-  }, []);
+  }
 
   return (
     <header className="c-site-header">
@@ -31,13 +27,12 @@ const Header = ({ title }) => {
         onChange={(event) => setCity(event.target.value)}
       />
 
-      <button onClick={changeCity}>Search</button>
+      <button onClick={getNewWeather}>Search</button>
 
       <div>
-        <h2>Temp:{data?.main?.temp?.toFixed()}°C</h2>
+        <h2>Temp: {weatherData?.main?.temp?.toFixed()}°C</h2>
       </div>
 
-      {/* {data.main.temp ? <h1>Temp:{data.main.temp}°C </h1> : null} */}
     </header>
   );
 };
