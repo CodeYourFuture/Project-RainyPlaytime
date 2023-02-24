@@ -2,13 +2,60 @@
 @use "theme/global.scss";
 
 
-.c-site-main{
-    background-color: skyblue;
+.App{
+    background-color: #8ecae6;
+}
+
+.c-site-header{
+  padding: 20px;
+}
+
+.heading{
+  background-color: #219ebc;
+  padding: 10px;
+}
+
+.c-site-header__title{
+  color: #023047;
+  padding: 20px;
+}
+
+.city{
+  margin: 15px;
+  padding: 15px;
+}
+
+.search-btn{
+  background-color: #023047;
+  color: white;
+  margin-left: 15px;
+  padding: 15px;
 }
 
 .weather-img{
+  margin: auto;
   width: 200px;
   height: 200px;
-  // max-width: 100%;
   object-fit: cover;
+}
+
+.description{
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.temp {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.box{
+  display: flex;
+  justify-content: center;
+}
+
+.sub-box{
+  padding: 30px;
 }

@@ -1,5 +1,7 @@
 import "./Header.scss";
+import WeatherIcon  from "../Picture/WeatherIcon";
 import React, { useState} from "react";
+
 
 const Header = ({ title }) => {
   const [weatherData, setWeatherData] = useState([]);
@@ -18,23 +20,40 @@ const Header = ({ title }) => {
 
   return (
     <header className="c-site-header">
-      <h1 className="c-site-header__title">{title}</h1>
-
-      <input
-        className="city"
-        type="text"
-        value={city}
-        onChange={(event) => setCity(event.target.value)}
-      />
-
-      <button onClick={getNewWeather}>Search</button>
-
-      <div>
-        <h2>Temp: {weatherData?.main?.temp?.toFixed()}°C</h2>
+      <div className="heading">
+        <h1 className="c-site-header__title">{title}</h1>
+        <input
+          className="city"
+          type="text"
+          placeholder="City"
+          value={city}
+          onChange={(event) => setCity(event.target.value)}
+        />
+        <button className="search-btn" onClick={getNewWeather}>FIND WEATHER</button>
       </div>
 
+      <WeatherIcon weatherId={weatherData?.weather?.[0]?.id} />
+      <div className="description">
+        <h3>{weatherData?.weather?.[0]?.description}</h3>
+      </div>
+
+      <div className="temp">
+        <h2>Temperature : {weatherData?.main?.temp?.toFixed()}°C</h2>
+      </div>
+
+      <div className="box">
+        <div className="sub-box">
+          <h4>Humidity : {weatherData?.main?.humidity}% </h4>
+        </div>
+
+        <div className="sub-box">
+          <h4>Pressure : {weatherData?.main?.pressure}</h4>
+        </div>
+      </div>
     </header>
   );
 };
 
 export default Header;
+
+
