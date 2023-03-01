@@ -1,33 +1,61 @@
 import "./App.scss";
+import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-// import FakeWeatherData from "./data/FakeWeather.json";
+import WeatherIcon from "./components/Picture/WeatherIcon";
+import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
+import FutureWeather from "./components/FutureForecast";
 
 
 const siteTitle = process.env.REACT_APP_SITE_TITLE ?? "CYF Weather";
 
 function App() {
-
+  const [weatherData, setWeatherData] = useState([]);
+  
+  function getNewWeather(city) {
+    fetch(
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=3b86046cce0de3be7cfa8369f4540b37`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setWeatherData(data);
+      });
+  }
+  
   return (
     <div className="App">
-      <Header title={siteTitle} />
+      <Header
+        title={siteTitle}
+        getNewWeather={getNewWeather}
+        weatherData={weatherData}
+      />
 
       <main className="c-site-main" tabIndex="0">
-        {/* <div>
-          <img
-            className="weather-img"
-            src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png"
-            alt="Current Weather"
-          />
-        </div> */}
+        <section>
+          {/* <WeatherIcon weatherId={weatherData?.weather?.[0]?.id} /> */}
+          {weatherData?.list?.map((icon) => (
+            <WeatherIcon weatherId={icon.weather[0].id} />
+          ))}
 
+          {weatherData?.list?.map((current) => (
+            <CurrentWeather
+              description={current.weather.description}
+              temp={current.main.temp.toFixed()}
+              humidity={current.main.humidity}
+              pressure={current.main.pressure}
+            />
+          ))}
+        </section>
 
-        {/* {FakeWeatherData.list.map((data) => (
-          <div key={data.dt}>Temp : {data && data.main.temp}</div>
-        ))} */}
-
-        {/* <div>{location}</div> */}
-        {/* <div>{temp && temp.list[0].main.temp}</div> */}
+        <section>
+          {weatherData?.list?.map((future) => (
+            <FutureWeather
+              time={future.dt_txt}
+              iconId={future.weather[0].id}
+              temp={future.main.temp.toFixed()}
+            />
+          ))}
+        </section>
       </main>
 
       <Footer />

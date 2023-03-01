@@ -7,6 +7,7 @@ import fog from "../../img/weather-icons/fog.svg";
 import clear from "../../img/weather-icons/clear.svg";
 import partlyCloudy from "../../img/weather-icons/partlycloudy.svg";
 import mostlyCloudy from "../../img/weather-icons/mostlycloudy.svg";
+import unknown from "../../img/weather-icons/unknown.svg"
 
 const images = {
   storm: { src: storm, alt: "storm" },
@@ -17,6 +18,7 @@ const images = {
   clear: { src: clear, alt: "clear" },
   partlyCloudy: { src: partlyCloudy, alt: "partly cloudy" },
   mostlyCloudy: { src: mostlyCloudy, alt: "mostly cloudy" },
+  unknown: { src: unknown, alt: "unknown" },
 };
 
 
@@ -35,8 +37,10 @@ function selectImage(weatherId){
     return images.clear;
   } else if (weatherId === 801) {
     return images.partlyCloudy;
+  } else if (weatherId < 805 && weatherId > 801) {
+    return images.mostlyCloudy;
   }
-  return images.mostlyCloudy;
+  return images.unknown;
 }
 
 const WeatherIcon = ({weatherId}) =>{
