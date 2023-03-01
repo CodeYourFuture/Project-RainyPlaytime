@@ -31,21 +31,33 @@ function App() {
       />
 
       <main className="c-site-main" tabIndex="0">
-        {/* <div>
-          <img
-            className="weather-img"
-            src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png"
-            alt="Current Weather"
-          />
-        </div> */}
+      
+        <section>
+          {/* <WeatherIcon weatherId={weatherData?.weather?.[0]?.id} /> */}
+          {weatherData?.list?.map((icon) => (
+            <WeatherIcon weatherId={icon.weather[0].id} />
+          ))}
 
+          {weatherData?.list?.map((current) => (
+            <CurrentWeather
+              description={current.weather.description}
+              temp={current.main.temp.toFixed()}
+              humidity={current.main.humidity}
+              pressure={current.main.pressure}
+            />
+          ))}
+        </section>
 
-        {/* {FakeWeatherData.list.map((data) => (
-          <div key={data.dt}>Temp : {data && data.main.temp}</div>
-        ))} */}
-
-        {/* <div>{location}</div> */}
-        {/* <div>{temp && temp.list[0].main.temp}</div> */}
+        <section>
+          {weatherData?.list?.map((future) => (
+            <FutureWeather
+              time={future.dt_txt}
+              iconId={future.weather[0].id}
+              temp={future.main.temp.toFixed()}
+            />
+          ))}
+        </section>
+        
       </main>
 
       <Footer />
