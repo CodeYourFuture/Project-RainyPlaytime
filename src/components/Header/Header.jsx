@@ -1,8 +1,7 @@
 import "./Header.scss";
-// import WeatherIcon from "../Picture/WeatherIcon";
 import React, { useState } from "react";
 
-const Header = ({ title, getNewWeather, weatherData }) => {
+const Header = ({ title, getNewWeather }) => {
   const [city, setCity] = useState("");
 
   return (
@@ -21,7 +20,6 @@ const Header = ({ title, getNewWeather, weatherData }) => {
         </button>
       </div>
 
-      
     </header>
   );
 };

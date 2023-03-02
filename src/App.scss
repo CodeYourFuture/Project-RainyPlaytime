@@ -59,3 +59,21 @@
 .sub-box{
   padding: 30px;
 }
+
+// -----------future weather------
+.container{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.items{
+  background-color: #023047;
+   text-align: center;
+   width: 200px;
+   border: 1px solid black;
+}
+
+.time,.temperature{
+  color: white;
+}

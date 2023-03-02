@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import WeatherIcon from "./components/Picture/WeatherIcon";
 import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
-import FutureWeather from "./components/FutureForecast";
+import FutureWeather from "./components/FutureWeather";
 
 
 const siteTitle = process.env.REACT_APP_SITE_TITLE ?? "CYF Weather";
@@ -31,25 +31,18 @@ function App() {
       />
 
       <main className="c-site-main" tabIndex="0">
-      
         <section>
-          {/* <WeatherIcon weatherId={weatherData?.weather?.[0]?.id} /> */}
-          {weatherData?.list?.map((icon) => (
-            <WeatherIcon weatherId={icon.weather[0].id} />
-          ))}
-
-          {weatherData?.list?.map((current) => (
-            <CurrentWeather
-              description={current.weather.description}
-              temp={current.main.temp.toFixed()}
-              humidity={current.main.humidity}
-              pressure={current.main.pressure}
-            />
-          ))}
+          <WeatherIcon weatherId={weatherData?.list?.weather?.[0]?.dt} />
+          <CurrentWeather
+            description={weatherData?.list?.weather?.[0]?.description}
+            temp={weatherData?.main?.temp?.toFixed()}
+            humidity={weatherData?.list?.main?.humidity}
+            pressure={weatherData?.list?.main?.pressure}
+          />
         </section>
 
         <section>
-          {weatherData?.list?.map((future) => (
+          {weatherData?.list?.splice(0, 7)?.map((future) => (
             <FutureWeather
               time={future.dt_txt}
               iconId={future.weather[0].id}
@@ -57,7 +50,8 @@ function App() {
             />
           ))}
         </section>
-        
+
+        {/* <FutureWeather /> */}
       </main>
 
       <Footer />
