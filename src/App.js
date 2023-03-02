@@ -2,10 +2,13 @@ import "./App.scss";
 import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+
 import WeatherIcon from "./components/Picture/WeatherIcon";
 import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
 import FutureWeather from "./components/FutureForecast";
 
+
+import Icon from './components/Icon/Icon';
 
 const siteTitle = process.env.REACT_APP_SITE_TITLE ?? "CYF Weather";
 
@@ -31,7 +34,7 @@ function App() {
       />
 
       <main className="c-site-main" tabIndex="0">
-      
+
         <section>
           {/* <WeatherIcon weatherId={weatherData?.weather?.[0]?.id} /> */}
           {weatherData?.list?.map((icon) => (
@@ -58,6 +61,9 @@ function App() {
           ))}
         </section>
         
+
+      <Icon name="clear"/>
+
       </main>
 
       <Footer />

@@ -20,8 +20,6 @@ const Header = ({ title, getNewWeather, weatherData }) => {
           FIND WEATHER
         </button>
       </div>
-
-      
     </header>
   );
 };
