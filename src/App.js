@@ -35,7 +35,7 @@ function App() {
           <WeatherIcon weatherId={weatherData?.list?.weather?.[0]?.dt} />
           <CurrentWeather
             description={weatherData?.list?.weather?.[0]?.description}
-            temp={weatherData?.main?.temp?.toFixed()}
+            temp={weatherData?.list?.main?.temp?.toFixed()}
             humidity={weatherData?.list?.main?.humidity}
             pressure={weatherData?.list?.main?.pressure}
           />
