@@ -2,3 +2,24 @@
 @use "theme/global.scss";
 
 
+:root {
+    --theme-color--paper:  #9CCEF4 ;
+    --theme-color--ink: #141A5B;
+    --theme-color--highlight: #fff ;
+    --theme-color--block: #759EDA;
+    --theme-color--button: #5879C7;
+    //speculative / guessed weather colours please update values
+    --weather--storm: #888;
+    --weather--drizzle: #efefef;
+    --weather--rain: #555;
+    --weather--snow: #bbb;
+    --weather--fog: #333;
+    --weather--clear: #3257ea;
+    --weather--partlycloudy: #4259b8;
+    --weather--mostlycloudy: #888;
+    }
+
+
+.weather-container {
+ background-color: var(--theme-color--paper);
+}
