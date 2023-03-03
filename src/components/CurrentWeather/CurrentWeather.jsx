@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function CurrentWeather({ description, temp, humidity, pressure }) {
+function CurrentWeather({ description, temp_min, temp_max, humidity, pressure }) {
   return (
     <>
       <div className="description">
@@ -9,7 +9,9 @@ function CurrentWeather({ description, temp, humidity, pressure }) {
       </div>
 
       <div className="temp">
-        <h3>Temperature : {temp}°C</h3>
+        <h3>
+          Temperature : {temp_min}° to {temp_max}°C
+        </h3>
       </div>
 
       <div className="box">

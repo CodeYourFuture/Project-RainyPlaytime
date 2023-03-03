@@ -32,12 +32,13 @@ function App() {
 
       <main className="c-site-main" tabIndex="0">
         <section>
-          <WeatherIcon weatherId={weatherData?.list?.weather?.[0]?.dt} />
+          <WeatherIcon weatherId={weatherData?.list?.[0]?.weather?.[0]?.id} />
           <CurrentWeather
-            description={weatherData?.list?.weather?.[0]?.description}
-            temp={weatherData?.list?.main?.temp?.toFixed()}
-            humidity={weatherData?.list?.main?.humidity}
-            pressure={weatherData?.list?.main?.pressure}
+            description={weatherData?.list?.[0]?.weather?.[0]?.description}
+            temp_min={Math.floor(weatherData?.list?.[0]?.main?.temp_min)}
+            temp_max={Math.ceil(weatherData?.list?.[0]?.main?.temp_max)}
+            humidity={weatherData?.list?.[0]?.main?.humidity}
+            pressure={weatherData?.list?.[0]?.main?.pressure}
           />
         </section>
 
