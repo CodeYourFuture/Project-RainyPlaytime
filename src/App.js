@@ -52,7 +52,7 @@ function App() {
           ))}
         </section>
 
-        {/* <FutureWeather /> */}
+    
       </main>
 
       <Footer />
