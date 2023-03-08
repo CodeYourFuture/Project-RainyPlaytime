@@ -32,6 +32,7 @@
   padding: 15px;
 }
 
+// ----------current weather section----------
 .weather-img{
   margin: auto;
   width: 200px;
@@ -51,12 +52,12 @@
   margin: 20px;
 }
 
-.box{
+.current-container{
   display: flex;
   justify-content: center;
 }
 
-.sub-box{
+.humid-press{
   padding: 30px;
 }
 
@@ -75,7 +76,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  border: 1px solid #fb8500;
+  // border: 1px solid #fb8500;
 }
 
 .time,.temperature{

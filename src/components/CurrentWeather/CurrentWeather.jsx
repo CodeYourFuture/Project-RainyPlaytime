@@ -1,27 +1,20 @@
 import React from 'react'
+import WeatherIcon from '../Picture/WeatherIcon';
 
 
-function CurrentWeather({ description, temp_min, temp_max, humidity, pressure }) {
+function CurrentWeather({ weatherId, description, temp_min, temp_max, humidity, pressure }) {
   return (
     <>
-      <div className="description">
-        <h2>{description}</h2>
-      </div>
+      <WeatherIcon weatherId={weatherId} />
 
-      <div className="temp">
-        <h3>
-          Temperature : {temp_min}° to {temp_max}°C
-        </h3>
-      </div>
-
-      <div className="box">
-        <div className="sub-box">
-          <h4>Humidity : {humidity}%</h4>
-        </div>
-
-        <div className="sub-box">
-          <h4>Pressure : {pressure}</h4>
-        </div>
+      <h2 className="description">{description}</h2>
+      <h3 className="temp">
+        Temperature : {temp_min}° to {temp_max}°C
+      </h3>
+      
+      <div className="current-container">
+        <h4 className="humid-press">Humidity : {humidity}%</h4>
+        <h4 className="humid-press">Pressure : {pressure}</h4>
       </div>
     </>
   );

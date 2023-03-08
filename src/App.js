@@ -2,7 +2,7 @@ import "./App.scss";
 import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import WeatherIcon from "./components/Picture/WeatherIcon";
+// import WeatherIcon from "./components/Picture/WeatherIcon";
 import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
 import FutureWeather from "./components/FutureWeather";
 
@@ -32,8 +32,8 @@ function App() {
 
       <main className="c-site-main" tabIndex="0">
         <section>
-          <WeatherIcon weatherId={weatherData?.list?.[0]?.weather?.[0]?.id} />
           <CurrentWeather
+            weatherId={weatherData?.list?.[0]?.weather?.[0]?.id}
             description={weatherData?.list?.[0]?.weather?.[0]?.description}
             temp_min={Math.floor(weatherData?.list?.[0]?.main?.temp_min)}
             temp_max={Math.ceil(weatherData?.list?.[0]?.main?.temp_max)}
@@ -51,8 +51,6 @@ function App() {
             />
           ))}
         </section>
-
-    
       </main>
 
       <Footer />
