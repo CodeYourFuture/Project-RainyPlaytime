@@ -1,6 +1,6 @@
 import "./App.scss";
 import Search from "./components/Search/Search";
-import Footer from "./components/Footer/Footer";
+// import Footer from "./components/Footer/Footer";
 import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
 import FutureWeather from "./components/FutureWeather/FutureWeather";
 // import WeatherInfo from "./weatherInfo.json"
@@ -16,7 +16,7 @@ function App() {
     const [weatherInfo, setWeatherInfo] = useState([])  //Initialized as an Empty Array
 console.log('This is Weather Info: ', weatherInfo);
   if(weatherInfo.length > 0){
-    let infWeather =  weatherInfo[0].weather[0].id 
+    let infWeather =  weatherInfo[0].weather[0].id
  }
 //  <sup>o</sup>
   return (
@@ -24,7 +24,7 @@ console.log('This is Weather Info: ', weatherInfo);
        <Search title={siteTitle} setWeatherInfo={setWeatherInfo} />
        <div className="weather-container "
       //  {
-      //   true ? style={{backgroundColor: "This"}}: 
+      //   true ? style={{backgroundColor: "This"}}:
       //  }
        >
         <CurrentWeather weatherInfo={weatherInfo} />
