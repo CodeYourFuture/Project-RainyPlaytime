@@ -1,5 +1,4 @@
 import React from 'react'
-import WeatherImg from "../img/weather-icons/clear.svg"
 import Storm from "../img/weather-icons/storm.svg"
 import Drizzle from "../img/weather-icons/drizzle.svg"
 import Rain from "../img/weather-icons/rain.svg"
@@ -12,7 +11,7 @@ const WeatherImages = ({infWeather}) => {
   return (
     <>
     {
-        infWeather < 300 ? <img src={Storm} />
+        infWeather < 300 ? <img src={Storm}  alt='Storm'/>
         :  infWeather >= 300 && infWeather <= 499 ? <img
         src={Drizzle}  alt='Drizzle'/> : infWeather >= 500 && infWeather <= 599 ? <img
         src={Rain} alt='Rain' /> : infWeather >= 600 && infWeather <= 699 ? <img
