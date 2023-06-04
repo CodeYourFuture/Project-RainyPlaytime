@@ -16,7 +16,7 @@ function App() {
     const [weatherInfo, setWeatherInfo] = useState([])  //Initialized as an Empty Array
 console.log('This is Weather Info: ', weatherInfo);
   if(weatherInfo.length > 0){
-    let infWeather =  weatherInfo[0].weather[0].id
+    // let infWeather =  weatherInfo[0].weather[0].id
  }
 //  <sup>o</sup>
   return (
