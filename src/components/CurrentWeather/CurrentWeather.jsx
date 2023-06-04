@@ -41,3 +41,8 @@ const CurrentWeather = ({weatherInfo}) => {
 }
 
 export default CurrentWeather
+
+
+
+
+
