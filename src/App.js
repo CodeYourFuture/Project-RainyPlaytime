@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Header title={siteTitle} />
       <main className="c-site-main" tabIndex="0">
-      <Icon name="clear"/>
+      <Icon name="snow"/>
     
       </main>
       <Footer />
