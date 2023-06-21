@@ -15,7 +15,8 @@ function App() {
 
   function getNewLocation(city) {
     fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=7e5286e19236105eab5bba5240bf165e`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=ffc5f974cd7c0ef5538059f343d6275f
+`
     )
       .then((response) => response.json())
       .then((data) => {
