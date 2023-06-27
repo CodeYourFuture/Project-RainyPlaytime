@@ -1,2 +1,89 @@
 @use "theme/utilities.scss";
 @use "theme/global.scss";
+
+
+.App{
+    background-color: #8ecae6;
+}
+
+.c-site-header{
+  padding: 20px;
+}
+
+.heading{
+  background-color: #219ebc;
+  padding: 10px;
+}
+
+.c-site-header__title{
+  color: #023047;
+  padding: 20px;
+}
+
+.city{
+  margin: 15px;
+  padding: 15px;
+}
+
+.search-btn{
+  background-color: #023047;
+  color: white;
+  margin-left: 15px;
+  padding: 15px;
+}
+
+// ----------current weather----------
+.current{
+  text-align: center;
+}
+
+.current-icon{
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.description{
+  color: white;
+}
+
+.temp {
+  margin: 20px;
+}
+
+.current-container{
+  display: flex;
+  justify-content: center;
+}
+
+.humid-press{
+  padding: 30px;
+}
+
+
+// -----------future weather------
+.future{
+  margin-top: 50px;
+  text-align: center;
+}
+
+.container {
+   display: inline-grid;
+   grid-template-columns: repeat(100px, 1fr);
+   grid-gap: 10px;
+   text-align: center;
+}
+
+.items{
+  // border: 1px solid #ccc;
+  text-align: center;
+  padding: 10px;
+}
+
+.future-icon {
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
