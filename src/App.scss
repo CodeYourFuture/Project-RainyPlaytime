@@ -32,7 +32,11 @@
   padding: 15px;
 }
 
-// ----------current weather section----------
+// ----------current weather----------
+.current{
+  text-align: center;
+}
+
 .current-icon{
   margin: auto;
   width: 300px;
@@ -41,14 +45,10 @@
 }
 
 .description{
-  display: flex;
-  justify-content: center;
   color: white;
 }
 
 .temp {
-  display: flex;
-  justify-content: center;
   margin: 20px;
 }
 
@@ -64,6 +64,7 @@
 
 // -----------future weather------
 .future{
+  margin-top: 50px;
   text-align: center;
 }
 

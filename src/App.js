@@ -2,9 +2,8 @@ import "./App.scss";
 import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-// import WeatherIcon from "./components/Picture/WeatherIcon";
 import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
-import FutureWeather from "./components/FutureWeather";
+import FutureWeather from "./components/FutureWeather/FutureWeather";
 
 
 const siteTitle = process.env.REACT_APP_SITE_TITLE ?? "CYF Weather";
@@ -31,7 +30,7 @@ function App() {
       />
 
       <main className="c-site-main" tabIndex="0">
-        <section>
+        <section className="current">
           <CurrentWeather
             weatherId={weatherData?.list?.[0]?.weather?.[0]?.id}
             description={weatherData?.list?.[0]?.weather?.[0]?.description}

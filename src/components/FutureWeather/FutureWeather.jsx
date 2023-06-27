@@ -1,5 +1,5 @@
 import React from "react";
-import WeatherIcon from "./Picture/WeatherIcon";
+import WeatherIcon from "../Picture/WeatherIcon";
 
 
  function FutureWeather({ time, iconId, temp }) {
