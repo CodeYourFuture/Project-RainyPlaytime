@@ -7,11 +7,11 @@ import WeatherIcon from "./Picture/WeatherIcon";
  
   return (
     <div className="container">
-      <div className="items time">{formattedTime}</div>
       <div className="items">
+        <p>{formattedTime}</p>
         <WeatherIcon weatherId={iconId} />
+        <p>{temp}°C</p>
       </div>
-      <div className="items temperature">{temp}°C</div>
     </div>
   );
 }

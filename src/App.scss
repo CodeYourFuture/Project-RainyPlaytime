@@ -64,21 +64,32 @@
 
 // -----------future weather------
 
-.container{
- display: flex;
- width: 100%;
- padding: 0px 2em 0px 2em;
+// .container{
+//  display: flex;
+//  width: 100%;
+//  padding: 0px 2em;
+// }
+
+// .items{
+//   display: flex;
+//   flex-direction: column;
+//   background-color: #023047;
+//   justify-content: center;
+//   align-items: center;
+//   // width: 100%;
+//   border: 1px solid #fb8500;
+// }
+
+.container {
+   display: inline-grid;
+   grid-template-columns: repeat(100px, 1fr);
+   grid-gap: 10px;
+  //  padding:20px;
 }
 
 .items{
-  display: flex;
-  background-color: #023047;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  // border: 1px solid #fb8500;
+  // border: 1px solid #ccc;
+  text-align: center;
+  padding: 10px;
 }
 
-.time,.temperature{
-  color: white;
-}
