@@ -35,8 +35,8 @@
 // ----------current weather section----------
 .weather-img{
   margin: auto;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
 }
 
@@ -64,27 +64,10 @@
 
 // -----------future weather------
 
-// .container{
-//  display: flex;
-//  width: 100%;
-//  padding: 0px 2em;
-// }
-
-// .items{
-//   display: flex;
-//   flex-direction: column;
-//   background-color: #023047;
-//   justify-content: center;
-//   align-items: center;
-//   // width: 100%;
-//   border: 1px solid #fb8500;
-// }
-
 .container {
    display: inline-grid;
    grid-template-columns: repeat(100px, 1fr);
    grid-gap: 10px;
-  //  padding:20px;
 }
 
 .items{
@@ -93,3 +76,9 @@
   padding: 10px;
 }
 
+.future-img {
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
