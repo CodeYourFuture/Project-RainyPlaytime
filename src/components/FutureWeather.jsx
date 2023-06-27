@@ -9,9 +9,9 @@ import WeatherIcon from "./Picture/WeatherIcon";
     <div className="container">
       <div className="items">
         <p>{formattedTime}</p>
-        
+        <div className="future-icon">
           <WeatherIcon weatherId={iconId} />
-        
+        </div>
         <p>{temp}°C</p>
       </div>
     </div>

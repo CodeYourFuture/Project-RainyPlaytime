@@ -48,7 +48,7 @@ const WeatherIcon = ({weatherId}) =>{
   const image = selectImage(weatherId)
  
   return (
-    <div className="weather-img">
+    <div>
       <img src={image.src} alt={image.alt} />
     </div>
   );

@@ -42,7 +42,7 @@ function App() {
           />
         </section>
 
-        <section>
+        <section className="future">
           {weatherData?.list?.splice(0, 7)?.map((future) => (
             <FutureWeather
               time={future.dt_txt}
